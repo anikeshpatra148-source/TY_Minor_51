@@ -1,0 +1,72 @@
+ODI Batting Performance Analysis Project Report
+
+Project Overview
+This project analyzes a dataset of top ODI cricket batters and explores the relationship between batting statistics and total runs scored. The main objective is to understand how performance features such as matches played, innings, batting average, strike rate, and centuries relate to run totals, and to build a simple linear regression model for prediction.
+
+Dataset
+The dataset used in this project is stored in the file named odb.csv. It contains batting records for several international cricket players and includes statistics such as:
+- Player
+- Span
+- Matches (Mat)
+- Innings (Inns)
+- Not Outs (NO)
+- Runs
+- Highest Score (HS)
+- Batting Average (Ave)
+- Balls Faced (BF)
+- Strike Rate (SR)
+- Hundreds (100)
+- Fifties (50)
+- Ducks (0)
+- Fours (4s)
+- Sixes (6s)
+
+Data Cleaning
+Before modeling, the dataset was cleaned to ensure quality and consistency. The following steps were performed:
+- Removed any unnamed index column if present
+- Standardized column names by removing extra spaces
+- Converted numeric columns to numeric data types using pandas
+- Checked for missing values and removed rows with missing data in essential fields
+- Reset the index to maintain a clean dataset structure
+
+Exploratory Data Analysis (EDA)
+The exploratory analysis was used to understand the dataset and identify patterns among batting statistics. The following analyses were performed:
+- Summary statistics for all relevant numerical columns
+- Correlation heatmap to evaluate relationships among features
+- Scatter plot of Runs vs Matches Played
+- Histogram showing the distribution of total runs
+- Top-performing players by total runs
+
+From the EDA, it was observed that total runs are strongly related to matches played and other performance metrics. This confirms that the dataset contains meaningful patterns suitable for predictive modeling.
+
+Model Selection
+A simple linear regression model was selected for this project because the goal was to predict a continuous target variable (total runs) using a single independent variable, matches played (Mat). Linear regression is easy to interpret and gives a clear relationship between input and output.
+
+Model Building
+The target variable used for the model was:
+- Runs
+
+The predictor variable used was:
+- Matches Played (Mat)
+
+The dataset was split into training and testing sets using a random_state value to ensure reproducibility. A LinearRegression model from scikit-learn was trained on the training set and evaluated on the testing set.
+
+Model Evaluation
+The model was evaluated using the following metrics:
+- Mean Absolute Error (MAE)
+- Root Mean Squared Error (RMSE)
+- R-squared (R²)
+
+These metrics help determine how well the model predicts actual run totals. In general:
+- Lower MAE and RMSE indicate better predictive accuracy
+- Higher R² indicates a better fit between the model and the data
+
+The model produced a regression line that reflects the overall trend that more matches played generally correspond to higher total runs. The evaluation confirms that the model is useful for a basic prediction task, although it is a simple model and may not capture all the complexities of real player performance.
+
+Conclusion
+This project demonstrates a straightforward approach to exploratory data analysis and predictive modeling in a sports dataset. The data cleaning and EDA helped identify meaningful relationships, and the linear regression model provided a satisfactory baseline prediction for total runs based on matches played.
+
+Overall, the project successfully shows how Python, pandas, matplotlib, and scikit-learn can be used to analyze cricket batting data and build a simple machine learning model. The model serves as a good starting point and can be improved in future work by incorporating more predictors such as average, strike rate, centuries, and batting consistency.
+
+Final Remarks
+This project is useful for learning the full workflow of data science tasks: data collection, cleaning, visualization, modeling, and evaluation. It also highlights how data-driven insights can be extracted from sports performance statistics.
